@@ -44,9 +44,9 @@ const account = {
   deposit(amount) {
     //   console.log(amount);
     this.balance += amount;
-    const newObj = this.createTransaction(amount, Transaction.DEPOSIT);
+    const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
     // console.log(newObj);
-    this.transactions = [...this.transactions, newObj];
+    this.transactions = [...this.transactions, transaction];
   },
 
   /*
@@ -65,9 +65,9 @@ const account = {
     }
 
     this.balance -= amount;
-    const newObj = this.createTransaction(amount, Transaction.WITHDRAW);
+    const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
     // console.log(newObj);
-    this.transactions = [...this.transactions, newObj];
+    this.transactions = [...this.transactions, transaction];
   },
 
   /*
@@ -96,22 +96,10 @@ const account = {
   getTransactionTotal(type) {
     let total = 0;
 
-    for (const transaction of this.transactions)
-      if (transaction.type === type) {
-        total += this.transaction.amount;
+    for (const transaction of this.transactions {
+     this.transaction.type === type && (total += this.transaction.amount);
       }
     return total;
   },
 };
-
-// console.log(account.getBalance());
-// console.log(account.transactions);
-// console.log(account.getTransactionTotal(Transaction.DEPOSIT));
-
-// const trEl = account.getTransactionDetails();
-
-// if (trEl) {
-//     console.log(trEl)
-// } else {
-//     console.log("Not found Obj");
-// }
+}
