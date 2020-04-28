@@ -1,5 +1,5 @@
 //*Напиши класс Car с указанными свойствами и методами.
-
+// debugger;
 class Car {
   /*
    * Добавь статический метод `getSpecs(car)`,
@@ -24,19 +24,19 @@ class Car {
     this.speed = speed;
     this.isOn = isOn;
     this.distance = distance;
-    this._price = price;
+    this.price = price;
   }
 
   /*
    * Добавь геттер и сеттер для свойства price,
    * который будет работать с свойством цены автомобиля.
    */
-  get price () {
-      return this._price;
+  get currentPrice () {
+      return this.price;
   }
 
-  set price (price) {
-      this._price = price;
+  set currentPrice (newPrice) {
+      this.price = newPrice;
   }
   /*
    * Добавь код для того чтобы завести автомобиль
@@ -65,6 +65,7 @@ class Car {
       if (this.speed + value <= this.maxSpeed) {
           this.speed += value;
       }
+      return
   }
 
   /*
@@ -83,7 +84,7 @@ class Car {
    */
   drive(hours) {
       if (this.isOn) {
-          this.distance = hours * this.speed
+          this.distance += hours * this.speed
       }
   }
 }
