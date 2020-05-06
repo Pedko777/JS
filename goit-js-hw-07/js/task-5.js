@@ -8,13 +8,20 @@
 const input = document.querySelector("#name-input");
 const output = document.querySelector("#name-output");
 
-function inputName(event) {
-  const defaultText = event.currentTarget.value;
+// function inputName(event) {
+//   const defaultText = event.currentTarget.value;
   
-  output.textContent = defaultText;
-  if (defaultText === null) {
-    output.textContent = "незнакомец";
-  }
-}
+//   output.textContent = defaultText;
+//   if (defaultText === null) {
+//     output.textContent = "незнакомец";
+//   } else {
+//     output.textContent =
+//   }
+// }
+
+const inputName = () => 
+  input.value !== ""
+  ? (output.textContent = input.value)
+  : (output.textContent = "незнакомец")
 
 input.addEventListener("input", inputName);
