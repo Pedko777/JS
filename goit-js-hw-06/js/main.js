@@ -126,7 +126,7 @@ console.log(getNamesSortedByFriendsCount(users));
 const getSortedUniqueSkills = users => {
   return users 
   .reduce((allSkill, user) =>[...allSkill, ...user.skills], [])
-  .filter((allSkill, index, skill) => skill.indexOf(allSkill)===index)
+  .filter((skill, index, allSkill) => allSkill.indexOf(skill)===index)
   .sort();
 };
 
